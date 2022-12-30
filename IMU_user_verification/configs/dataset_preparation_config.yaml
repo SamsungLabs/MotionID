@@ -1,0 +1,18 @@
+# paths
+
+path_to_users: /nasDATASETS/IMU_specific_motion/90_users_train_anon_data
+path_to_holdout_users: /nasDATASETS/IMU_specific_motion/11_users_holdout_test_anon_data
+path_to_tensorized_datasets: /nasDATASETS/IMU_specific_motion/tensorized_datasets
+
+# dataset config
+nseq_stat:
+  nseq: 75
+  nseq_back: 63
+  nseq_forward: 12
+  freq: 50
+
+resplit:
+  nusers: [60, 65, 70, 75, 80, 85]
+#  nusers: [85]
+  nsplits: 5
+  init_seeds: [42, 43, 44, 45, 46]

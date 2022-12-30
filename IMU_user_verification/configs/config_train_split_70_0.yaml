@@ -1,0 +1,40 @@
+device: cuda:2
+
+# logger options
+#results_path: /nasDATASETS/_from_nas/imu_results/prod_results
+results_path: /nasDATASETS/IMU_specific_motion/results
+experiment_name: train_osnet_on_split_70_0
+
+# optimization options
+epochs: 2000
+batch_size: 128
+optimizer_name: sgd
+#  weight_decay: 0.0001
+optimizer:
+  lr: 0.01
+  momentum: 0.9
+lr_scheduler_name: none
+lr_scheduler:
+  step_size: 2000
+  gamma: 1.0
+ce_weight: 1.0
+triplet_weight: 1.0
+contrast_weight: 1.0
+
+# model options
+#branch_embedding_size: 64
+model_name: os_net
+model:
+  n_branches: 22
+  out_embedding_size: 300
+  n_classes: 70
+  crop_size: 51
+
+# data options
+path_to_imu_data: /nasDATASETS/IMU_specific_motion/tensorized_datasets/split_70_0
+train_template_name: train
+holdval_template_name: holdval
+
+path_to_holdout_imu_data: /nasDATASETS/IMU_specific_motion/tensorized_datasets/holdout_users
+holdout_template_name: holdout_test
+
